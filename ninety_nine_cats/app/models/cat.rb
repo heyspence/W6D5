@@ -22,7 +22,12 @@ class Cat < ApplicationRecord
 
     def birth_date_cannot_be_future
         if birth_date > Date.today
-            errors.add(:birth_date, "can't be in the futre")
+            errors.add(:birth_date, "can't be in the future")
         end
+    end
+
+    def age
+        current_date = Date.today
+        age = current_date.year - self.birth_date.year
     end
 end
