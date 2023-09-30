@@ -7,6 +7,8 @@
     <li>Sex: <%= @cat.sex %></li>
     <li>Age: <%= @cat.age %></li>
     <li>Description: <%= @cat.description %></li>
+    <a href="<%= edit_cat_url(@cat) %>">Edit Cat</a>
+    <br>
     <a href="<%= cats_url %>">View All Cats</a>
 </ul>
 

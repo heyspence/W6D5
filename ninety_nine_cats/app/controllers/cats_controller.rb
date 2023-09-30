@@ -5,16 +5,18 @@ class CatsController < ApplicationController
         render :index
     end
 
-    # def create
-    #     @cat = Cat.create!(cat_params)
-    #     redirect_to cat_url(@cat)
-    # end
+    def create
+        @cat = Cat.create!(cat_params)
+        redirect_to cat_url(@cat)
+    end
 
     def new
         render :new
     end
 
     def edit
+        @cat = Cat.find(params[:id])
+        render :edit
     end
 
     def show
@@ -26,7 +28,7 @@ class CatsController < ApplicationController
     end
 
     private 
-    # def cat_params
-    #     params.require(:cats).permit(:name, :birth_date, :color, :sex, :description)
-    # end
+    def cat_params
+        params.require(:cat).permit(:name, :birth_date, :color, :sex, :description)
+    end
 end

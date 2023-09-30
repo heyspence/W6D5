@@ -1,11 +1,11 @@
 <h1>New Cat</h1>
 <form action= "<%= cats_url %>" method = "post">
     <label>Name 
-        <input type="text" name="cat[name]">
+        <input type="text" name="cat[name]" value="<%= @cat.name%>"f>
     </label>
     <br>
     <label>Birth date 
-        <input type="date" name="cat[birth_date]">
+        <input type="date" name="cat[birth_date]" value="<%= @cat.birth_date %>">
     </label>
     <br>
     <label>Color
@@ -23,7 +23,7 @@
     </label>
     <br>
     <label>Description 
-        <input type="text" name="cat[description]">
+        <input type="text" name="cat[description]" value="<%= @cat.description %>">
     </label>
     <br>
     <input type="submit">
